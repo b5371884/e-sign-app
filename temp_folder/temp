@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
+  </head>
+  <body>
+    <pre id="object"></pre>
+    <ul id="list">
+        
+    </ul>
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyACWpYN8fQJux5WYILmvegefxGjKgz0Ikc",
+            authDomain: "sutsign-9602f.firebaseapp.com",
+            databaseURL: "https://sutsign-9602f.firebaseio.com",
+            projectId: "sutsign-9602f",
+            storageBucket: "sutsign-9602f.appspot.com",
+            messagingSenderId: "670407673317"
+        };
+
+        firebase.initializeApp(config);
+
+        const key = '204361';
+        const rootRef = firebase.database().ref();
+        const oneRef = rootRef.child('Course/'+ key);
+
+        oneRef.on('child_added', snap => {
+            console.log(snap.val());
+        });
+
+    </script>
+  </body>
+</html>

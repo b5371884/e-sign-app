@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> E-Sign@sut </title>
+</head>
+<body>
+
+
+    <pre id="object"></pre>
+    <ul id="list">
+        
+    </ul>
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyACWpYN8fQJux5WYILmvegefxGjKgz0Ikc",
+            authDomain: "sutsign-9602f.firebaseapp.com",
+            databaseURL: "https://sutsign-9602f.firebaseio.com",
+            projectId: "sutsign-9602f",
+            storageBucket: "sutsign-9602f.appspot.com",
+            messagingSenderId: "670407673317"
+        };
+
+        firebase.initializeApp(config);
+
+        const key = '204361';
+        const rootRef = firebase.database().ref();
+        const oneRef = rootRef.child('Course/'+ key);
+
+        oneRef.on('child_added', snap => {
+            console.log(snap.val());
+        });
+
+    </script>
+
+</body>
+</html>

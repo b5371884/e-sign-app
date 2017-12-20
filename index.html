@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> E-Sign.IT@SUT </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 80px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 80px;
+        }
+      }
+
+      @font-face {
+          font-family: 'supermarketRegular';
+          src: url('./vendor/font/supermarket.ttf');
+      }
+
+      h1, h2, h3, h4, h5, h6,form,table {
+        font-family: supermarketRegular;
+      }
+
+      .webfont {
+        font-family: supermarketRegular;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">E-Sign IT Suranaree</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+           <!--  <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+           <div class="col-md-6 offset-md-3">
+                <h2 class="text-center"> ตรวจสอบลายเซ็น </h2>
+                <form>
+                  <div class="form-group">
+                    <label for="course_id">Course ID</label>
+                    <input type="text" class="form-control" id="course_id" placeholder="รหัสวิชา 204XXX">
+                  </div>
+                  <div class="form-group">
+                    <label for="student_code">Student Code</label>
+                    <input type="text" class="form-control" id="student_code" placeholder="รหัสนักศึกษา B5XXXXXX">
+                  </div>
+
+                  <button type="button" class="btn btn-primary" onclick="search_signs(document.getElementById('course_id').value,document.getElementById('student_code').value)"> ค้นหา </button>
+
+                </form>
+
+                <p style="margin-top: 20px;">รายวิชา: <font id="showCourseName"> </font></p>
+
+                <div style="margin-top: 20px;">
+
+                    <br>
+                    <input id="text" type="text" value="B5XXXXXX" placeholder="หรอกรหัสนักศึกษาเพื่อสร้าง QR CODE" style="width:80%" /><br/>
+                    <br/>
+                    <div id="qrcode"> </div>
+                    <br><br>
+
+                    <table class="table" name="signShow" id="signShow">
+                      <thead class="thead-inverse">
+                        <tr>
+                          <th> # </th>
+                          <th> Sign 1 </th>
+                          <th> Sign 2 </th>
+                          <th> Sign 3 </th>
+                          <th> Sign 4 </th>
+                          <th> TA </th>
+                        </tr>
+                      </thead>
+                    </table>
+                </div>
+
+           </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@1.5.4/src/loadingoverlay.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@1.5.4/extras/loadingoverlay_progress/loadingoverlay_progress.min.js"></script>
+    <script src="vendor/app/qrcode.js"></script>
+    <script src="vendor/app/app.js"></script>
+   
+
+  </body>
+
+</html>
